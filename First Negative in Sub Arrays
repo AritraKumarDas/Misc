@@ -1,0 +1,53 @@
+/* You are given an integer array arr of size n and one integer k. find the first negative integer for each window(contiguous subarray) of size k. If a window does not contain a negative integer, then print 0 for that window.
+
+Constraints:
+1<=n<=10000
+1<=arr[i]<=100000
+1<=k<=n<=100000
+
+Input format
+First line contains size of array 
+Second line contains array elements
+Third line contains the value of k
+
+Output format
+Print the  first negative integer of the window if it is available else print 0.
+
+Sample Input
+6
+-4 -3 1 2  7 -6
+3
+Sample output
+-4 -3 0 -6 
+*/
+
+class FirstNegative {
+    
+    public static void findFirstNegative(int[] arr, int k){
+        int n = arr.length;
+        int firstNegative = -1;
+        for(int i=0; i<=n-k; i++){
+            if(firstNegative < i){
+                firstNegative = -1;
+                for(int j=i; j<i+k; j++){
+                    if(arr[j] < 0){
+                    firstNegative = j;
+                    break;
+                    }
+                }
+            }
+            if(firstNegative == -1){
+                System.out.print("0 ");
+            }else{
+                System.out.print(arr[firstNegative] + " ");
+            }
+        }
+    }
+    
+    
+    public static void main(String[] args) {
+        int[] arr = {-4,-3,1,2,7,-6};
+        int k = 3;
+        findFirstNegative(arr, k);
+    }
+}
