@@ -40,7 +40,7 @@ public class ShortestSortedSubArray {
 			System.out.println("Subarray Size: " + (end-start+1));
 		} else {
 			System.out.println("Array is already sorted");
-			System.out.println("Subarray Size: " + (end-start+1));
+			System.out.println("Subarray Size: " + 0);
 		}
 	}
 }
