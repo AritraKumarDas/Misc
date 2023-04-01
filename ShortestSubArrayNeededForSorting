@@ -33,18 +33,14 @@ public class ShortestSortedSubArray {
 			}
 		}
 
-		// if(start == end){
-		// System.out.print(0);
-		// }else{
-		// System.out.print(end-start+1);
-		// }
 		if (start != end && arr[start] != arr[end]) {
 			for (int i = start; i <= end; i++) {
 				System.out.print(arr[i] + " ");
 			}
+			System.out.println("Subarray Size: " + (end-start+1));
 		} else {
 			System.out.println("Array is already sorted");
-
+			System.out.println("Subarray Size: " + (end-start+1));
 		}
 	}
 }
